@@ -8,7 +8,7 @@ $dateAsTimeStamp = ''; // no need to pass the date if you want to use the curren
 //$dateAsTimeStamp = strtotime('June 9 2003 21:00 UT');
 $mp = new moonPhase($dateAsTimeStamp);
 
-echo "<b>On this date: ", strftime ("%b %d %Y %H:%M:%S", $mp->getDateAsTimeStamp()), ":</b>";
+echo "<b>On this date: ", strftime("%b %d %Y %H:%M:%S", $mp->getDateAsTimeStamp()), ":</b>";
 echo "<br />\n";
 echo "The position (phase) within the moon's cycle: ", $mp->getPositionInCycle();
 echo "<br />\n";
@@ -27,9 +27,9 @@ echo "<br />\n<br />\n";
 echo "<b>Moon phases for upcoming week:</b>";
 echo "<br />\n";
 $UpcomingWeekArray = $mp->getUpcomingWeekArray();
-foreach($UpcomingWeekArray as $timeStamp => $phaseID)
-	echo "&nbsp;&nbsp;", date('l',$timeStamp), ": ", $mp->getPhaseName($phaseID), "<br />\n";
+foreach ($UpcomingWeekArray as $timeStamp => $phaseID) echo "&nbsp;&nbsp;", date('l', $timeStamp), ": ", $mp->getPhaseName($phaseID), "<br />\n";
+
 
 ?>
 </body>
-</html> 
+</html>
