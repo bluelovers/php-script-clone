@@ -78,20 +78,13 @@ class moonPhase
 	{
 		$position = $this->getPositionInCycle();
 		if ($position >= 0.474 && $position <= 0.53) $phaseInfoForCurrentDate = array(MP_NEW_MOON_ID, MP_NEW_MOON_NAME);
-		else
-			if ($position >= 0.53 && $position <= 0.724) $phaseInfoForCurrentDate = array(MP_WAXING_CRESCENT_ID, MP_WAXING_CRESCENT_NAME);
-			else
-				if ($position >= 0.724 && $position <= 0.776) $phaseInfoForCurrentDate = array(MP_FIRST_QUARTER_ID, MP_FIRST_QUARTER_NAME);
-				else
-					if ($position >= 0.776 && $position <= 0.974) $phaseInfoForCurrentDate = array(MP_WAXING_GIBBOUS_ID, MP_WAXING_GIBBOUS_NAME);
-					else
-						if ($position >= 0.974 || $position <= 0.026) $phaseInfoForCurrentDate = array(MP_FULL_MOON_ID, MP_FULL_MOON_NAME);
-						else
-							if ($position >= 0.026 && $position <= 0.234) $phaseInfoForCurrentDate = array(MP_WANING_GIBBOUS_ID, MP_WANING_GIBBOUS_NAME);
-							else
-								if ($position >= 0.234 && $position <= 0.295) $phaseInfoForCurrentDate = array(MP_THIRD_QUARTER_MOON_ID, MP_THIRD_QUARTER_MOON_NAME);
-								else
-									if ($position >= 0.295 && $position <= 0.4739) $phaseInfoForCurrentDate = array(MP_WANING_CRESCENT_ID, MP_WANING_CRESCENT_NAME);
+		elseif ($position >= 0.53 && $position <= 0.724) $phaseInfoForCurrentDate = array(MP_WAXING_CRESCENT_ID, MP_WAXING_CRESCENT_NAME);
+		elseif ($position >= 0.724 && $position <= 0.776) $phaseInfoForCurrentDate = array(MP_FIRST_QUARTER_ID, MP_FIRST_QUARTER_NAME);
+		elseif ($position >= 0.776 && $position <= 0.974) $phaseInfoForCurrentDate = array(MP_WAXING_GIBBOUS_ID, MP_WAXING_GIBBOUS_NAME);
+		elseif ($position >= 0.974 || $position <= 0.026) $phaseInfoForCurrentDate = array(MP_FULL_MOON_ID, MP_FULL_MOON_NAME);
+		elseif ($position >= 0.026 && $position <= 0.234) $phaseInfoForCurrentDate = array(MP_WANING_GIBBOUS_ID, MP_WANING_GIBBOUS_NAME);
+		elseif ($position >= 0.234 && $position <= 0.295) $phaseInfoForCurrentDate = array(MP_THIRD_QUARTER_MOON_ID, MP_THIRD_QUARTER_MOON_NAME);
+		elseif ($position >= 0.295 && $position <= 0.4739) $phaseInfoForCurrentDate = array(MP_WANING_CRESCENT_ID, MP_WANING_CRESCENT_NAME);
 		list($this->moonPhaseIDforDate, $this->moonPhaseNameForDate) = $phaseInfoForCurrentDate;
 	} // END function calcMoonPhase() {
 
@@ -138,8 +131,7 @@ class moonPhase
 		$days = 0;
 		$position = $this->getPositionInCycle();
 		if ($position < 0.25) $days = (0.25 - $position) * $this->getPeriodInDays();
-		else
-			if ($position >= 0.25) $days = (1.25 - $position) * $this->getPeriodInDays();
+		elseif ($position >= 0.25) $days = (1.25 - $position) * $this->getPeriodInDays();
 		return round($days, 1);
 	} // END function getDaysUntilNextLastQuarterMoon() {
 
@@ -164,8 +156,7 @@ class moonPhase
 		$days = 0;
 		$position = $this->getPositionInCycle();
 		if ($position < 0.5) $days = (0.5 - $position) * $this->getPeriodInDays();
-		else
-			if ($position >= 0.5) $days = (1.5 - $position) * $this->getPeriodInDays();
+		elseif ($position >= 0.5) $days = (1.5 - $position) * $this->getPeriodInDays();
 		return round($days, 1);
 	} // END function getDaysUntilNextNewMoon() {
 
