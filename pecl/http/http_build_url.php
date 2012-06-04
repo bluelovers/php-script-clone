@@ -51,6 +51,9 @@ if (!function_exists('http_build_url'))
 	 * Build an URL
 	 * The parts of the second URL will be merged into the first according to the flags argument.
 	 *
+	 * @link http://www.php.net/manual/zh/function.http-build-url.php
+	 * @link http://www.mediafire.com/?zjry3tynkg5
+	 *
 	 * @param	mixed			(Part(s) of) an URL in form of a string or associative array like parse_url() returns
 	 * @param	mixed			Same as the first argument
 	 * @param	int				A bitmask of binary or'ed HTTP_URL constants (Optional)HTTP_URL_REPLACE is the default
